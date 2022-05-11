@@ -23,9 +23,9 @@ console.log ("Essas são as minhas comidas preferidas:\n",comidasArray[0] ,"\n",
 //Exercício 3
 
 const listaDeTarefas = []
-listaDeTarefas.push (prompt("Adicione a tarefa número 1!"), prompt("Adicione a tarefa número 2!"), prompt("Adicione a tarefa número 3!"))
+listaDeTarefas.push(prompt("Adicione a tarefa número 1!"), prompt("Adicione a tarefa número 2!"), prompt("Adicione a tarefa número 3!"))
 console.log (listaDeTarefas)
-listaDeTarefas.splice (Number(prompt("Qual tarefa você completou de 1 a 3?"))-1, 1)
+listaDeTarefas.splice(Number(prompt("Qual tarefa você completou de 1 a 3?"))-1, 1)
 console.log (listaDeTarefas)
 
 //Desafio
