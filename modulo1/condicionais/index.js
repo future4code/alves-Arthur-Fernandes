@@ -12,62 +12,62 @@
 
 //Prático
 
-// //1
+//1
 
-// const idade= +prompt("Qual sua idade?")
+const idade= +prompt("Qual sua idade?")
    
-// if (idade >= 18){
-//     console.log ("Você pode dirigir.")
-// }   else {
-//     console.log("Você não pode dirigir.")
-// }
+if (idade >= 18){
+    console.log ("Você pode dirigir.")
+}   else {
+    console.log("Você não pode dirigir.")
+}
 
 
-// //2 
-// const estudo = prompt ("Quando você estuda? Digite M para matutino, V para vespertino ou N para noturno!")
+//2 
+const estudo = prompt ("Quando você estuda? Digite M para matutino, V para vespertino ou N para noturno!")
 
-// if (estudo === "M") {
-//     console.log("Bom Dia!")
-// }else if (estudo ==="V"){
-//     console.log("Boa Tarde!")
-// }else{
-//     console.log("Boa Noite!")
-// }
-// //3
+if (estudo === "M") {
+    console.log("Bom Dia!")
+}else if (estudo ==="V"){
+    console.log("Boa Tarde!")
+}else{
+    console.log("Boa Noite!")
+}
+//3
 
-// switch (estudo) {
-//     case "M":
-//         console.log("Bom Dia!")
-//         break;
-//     case "V":
-//         console.log("Boa Tarde!")
-//         break;
-//     default:
-//         console.log("Boa Noite!")
-//         break;
-// }
+switch (estudo) {
+    case "M":
+        console.log("Bom Dia!")
+        break;
+    case "V":
+        console.log("Boa Tarde!")
+        break;
+    default:
+        console.log("Boa Noite!")
+        break;
+}
 
-// //4
-// const genero = prompt("Qual gênero de filme assistiremos?").toUpperCase()
-// const preco = +prompt (`Qual o preço do ingresso?`).toUpperCase()
+//4
+const genero = prompt("Qual gênero de filme assistiremos?").toUpperCase()
+const preco = +prompt (`Qual o preço do ingresso?`).toUpperCase()
 
-// if(genero === "FANTASIA" && preco < 15){
-// console.log("Bom filme!")
-// }else {
-//     console.log("Escolha outro filme :(")
-// }
+if(genero === "FANTASIA" && preco < 15){
+console.log("Bom filme!")
+}else {
+    console.log("Escolha outro filme :(")
+}
 
-// //Desafios
+//Desafios
 
-// //1)
+//1)
 
-// if(genero === "FANTASIA" && preco < 15){
-//     lanche = prompt("Qual lanchinho você vai comprar?")
+if(genero === "FANTASIA" && preco < 15){
+    lanche = prompt("Qual lanchinho você vai comprar?")
     
-//     console.log("Bom filme! \n Aproveite o seu ", lanche)
-//     }else {
-//         console.log("Escolha outro filme :(")
-//     }
+    console.log("Bom filme! \n Aproveite o seu ", lanche)
+    }else {
+        console.log("Escolha outro filme :(")
+    }
 //2 
 const dadosUser = {
 nome : prompt ("Qual seu nome?"),
