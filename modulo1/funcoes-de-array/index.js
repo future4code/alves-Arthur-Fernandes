@@ -45,7 +45,7 @@ const pets = [
  const nomePreco = produtos.map((produto)=>{
     let objeto = {
         nome : produto.nome,
-        preco : produto.preco - ((produto.preco/100)*5)
+        preco : (produto.preco - ((produto.preco/100)*5)).toFixed(2)
     }
     return objeto
  })
