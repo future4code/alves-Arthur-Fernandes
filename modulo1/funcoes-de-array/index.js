@@ -78,11 +78,11 @@ const pokemons = [
 
  const pokemonsNome = pokemons.map((pokemon)=>pokemon.nome)
 
-pokemonsNome.sort((a,z)=> a.localeCompare(z)) //ordem alfabetica
+pokemonsNome.sort((str1,str2)=> str1.localeCompare(str2)) //ordem alfabetica
 
 console.log(pokemonsNome)
 
 //b)
 
-const pokemonsTipos = new Set(pokemons.map((pokemon, index)=>pokemon.tipo)) //valores únicos
+const pokemonsTipos = new Set(pokemons.map((pokemon)=>pokemon.tipo)) //valores únicos
 console.log (pokemonsTipos)
