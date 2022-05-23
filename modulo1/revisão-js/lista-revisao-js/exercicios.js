@@ -57,11 +57,25 @@ return objetoNumero
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
-   
+  let nPares = []
+    for (let i = 0 ;i <=2*(n-1) ; i++){
+       if (i%2===0){
+           nPares.push(i)
+       }
+   }
+   return nPares
 }
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
+    if (ladoA == ladoB && ladoA == ladoC){
+        return "Equilátero"
+}else if (ladoA != ladoB && ladoB == ladoC || ladoA==ladoC && ladoA != ladoB 
+    ||ladoB==ladoA && ladoB != ladoC){
+    return "Isósceles"
+}else {
+    return "Escaleno"
+}
 
 }
 
