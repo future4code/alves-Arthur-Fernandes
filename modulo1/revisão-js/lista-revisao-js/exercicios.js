@@ -76,7 +76,6 @@ function classificaTriangulo(ladoA, ladoB, ladoC) {
 }else {
     return "Escaleno"
 }
-
 }
 
 // EXERCÍCIO 10
