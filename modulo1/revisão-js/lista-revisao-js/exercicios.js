@@ -42,7 +42,17 @@ function retornaMaiorNumero(array) {
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-
+let maior 
+let menor 
+    if (num1>num2){maior=num1, menor=num2}else{maior=num2, menor=num1}
+let divi 
+    if (maior%menor===0){divi = true}else{divi = false}
+let objetoNumero = {
+    maiorNumero : maior ,
+    maiorDivisivelPorMenor : divi ,
+    diferenca : maior - menor
+}
+return objetoNumero
 }
 
 // EXERCÍCIO 08
