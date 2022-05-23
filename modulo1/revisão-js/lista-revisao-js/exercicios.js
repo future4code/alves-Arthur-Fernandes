@@ -26,7 +26,7 @@ return value})
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
- 
+ return array.filter((value)=>{if(value%2===0) return value}).map((value)=>value**2)
 }
 
 // EXERCÍCIO 06
