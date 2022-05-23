@@ -20,7 +20,8 @@ function retornaArrayOrdenado(array) {
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  
+  return array.filter((value)=>{if(value%2==0)
+return value})
 }
 
 // EXERCÍCIO 05
