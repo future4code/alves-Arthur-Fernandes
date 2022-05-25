@@ -1,0 +1,80 @@
+header {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.16);
+    color: rgb(221, 208, 194);
+    background-color: rgba(31, 136, 122, 0.157);
+    margin : 2% ;
+    border-radius: 5px;
+    border : solid ;
+    border-color: rgb(221, 208, 194);
+    display : inline-block;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.16);
+    padding: 3%;
+    background-color:rgba(31, 136, 122, 0.714);
+    color:rgb(221, 208, 194);
+    border-radius: 5px;
+    border : solid ;
+    border-color: rgb(221, 208, 194);
+    font-family:'Times New Roman', Times, serif;
+    font-size:20px;
+}
+a { 
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.16);
+    padding:4px;
+    background-color: rgba(31, 136, 122, 0.157);
+    margin-left : 2% ;
+    border : solid ;
+    border-radius: 5px;
+    border-color: rgb(221, 208, 194);
+    color:rgb(221, 208, 194);
+    text-decoration-line: none;
+}
+main {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.16);
+    font-size: 250%;
+    background-color: rgba(31, 136, 122, 0.157);
+    margin : 2% ;
+    border-radius: 5px;
+    border : solid ;
+    border-color: rgb(221, 208, 194);
+    padding-bottom: 80%;
+}
+footer{
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.16);
+    margin-top:90%;
+    font-size:125%;
+    background-color:rgba(31, 136, 122, 0.289);
+    border-radius: 5px
+}
+p{
+    margin-left:10px;
+    margin-right:10px
+}
+h1{
+    margin-left:10px;
+    margin-right:10px
+}
+#cratera{
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.16);
+ display: inline-flex ;   
+ width: 60%;
+ height: 200px ;
+ margin-bottom: -1.40%; 
+}
+.social{
+    max-width:20px
+}
+tr{
+    background-color: rgba(31, 136, 122, 0.289);
+}
+td{
+    margin-left:10px;
+    margin-right:10px
+}
+th{
+    margin-left:10px;
+    margin-right:10px
+}   
