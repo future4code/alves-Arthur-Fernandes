@@ -51,8 +51,8 @@ width : 15px;
     border-radius: 5px;
     font-size: 20px;
     color: white;
-    display: block;
-    margin: auto
+
+    margin: auto;
 }
 
 .botao-amarelo:hover {
@@ -90,13 +90,15 @@ width : 15px;
 
 #container-para-comprar {
     background-color: #e7eb90;
-    display:block
+    padding: 5%;
+
 }
 
 #container-para-comprar>p {
     color: #c44f00;
     padding: 100px 0;
     font-size: 60px;
+    display:block
 }
 
 
