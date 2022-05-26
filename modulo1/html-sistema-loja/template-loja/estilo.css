@@ -3,11 +3,13 @@ header {
     color: rgb(221, 208, 194);
     background-color: rgba(31, 136, 122, 0.157);
     margin : 2% ;
+    width: 60%;
     border-radius: 5px;
     border : solid ;
     border-color: rgb(221, 208, 194);
     display : inline-block;
     font-family:Arial, Helvetica, sans-serif;
+    padding:20px
 }
 
 body {
@@ -34,6 +36,7 @@ a {
     text-decoration-line: none;
 }
 main {
+    background-image:url(#cratera);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.16);
     font-size: 20px;
     background-color: rgba(31, 136, 122, 0.157);
@@ -54,16 +57,19 @@ p{
     margin-left:10px;
     margin-right:10px
 }
-h1{
+.class{
+    font-size: 20px;
     margin-left:10px;
     margin-right:10px
 }
 #cratera{
+    opacity : 0.75;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.16);
  display: inline-flex ;   
  width: 60%;
  height: 200px ;
  margin-bottom: -1.40%; 
+ margin-left : 2%
 }
 .social{
     max-width:20px
@@ -72,12 +78,32 @@ tr{
     background-color: rgba(31, 136, 122, 0.289);
 }
 th{
-    margin-left:10px;
-    margin-right:10px
+    padding:10px;
+  
 }   
+td{
+    text-align: center;
+}
 img {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.16);
     border-radius: 5px;
     border : solid ;
     border-color: rgb(221, 208, 194);
+}
+header p {
+    font-size: 30px
+}
+table, ul, ol, form {
+    margin:auto;
+    text-align:center;
+
+}
+h2{
+    width:max-content;
+    padding: 40px;
+    margin:auto;
+    text-align: center,
+}
+ul{
+    list-style: none;
 }
