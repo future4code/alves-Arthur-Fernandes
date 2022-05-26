@@ -49,9 +49,11 @@ width : 15px;
 }
 
 .botao-amarelo:hover {
-    background-color: #c44f00;
+    background-color: #b57c32;
 }
-
+.botao-amarelo:active {
+    color:white
+}
 .container {
     height: 500px;
     text-align: center;
@@ -118,6 +120,12 @@ td button {
     border-radius: 5px;
     color: black;
 }
+td button:hover{
+    background-color: #c6b04f;
+}
+td button:active{
+    color:white;
+}
 
 .container-do-search {
     margin-top: 20px;
@@ -137,4 +145,7 @@ td button {
 
 #back-button:hover {
     background-color: #635a3d
+}
+#back-butto:active {
+    color:white
 }
