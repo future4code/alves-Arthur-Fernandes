@@ -35,16 +35,16 @@ if (valorUser > 21) {
    cartasUser[0] = comprarCarta()
    cartasUser[1] = comprarCarta()
 }
-let texto = `Suas cartas são ${cartasUser[0].texto} e ${cartasUser[1].texto} a carta do
+let texto = [`Suas cartas são ${cartasUser[0].texto} e ${cartasUser[1].texto} a carta do
 computador é ${cartasComp[0].texto}
 
-Deseja comprar mais uma carta?`
+Deseja comprar mais uma carta?`]
 while(confirm(texto)) {
 
   cartasUser.push(comprarCarta())
    valorUser2 = valorUser + cartasUser[cartasUser.length-1].valor
    for(cartas of cartasUser){
-      confirm(`Suas cartas são ${cartas.texto} , a carta do comuptador é ${cartasComp[0].texto}\nDeseja comprar mais uma carta?`)
+     texto.push(`Suas cartas são ${cartas.texto}, a carta do comuptador é ${cartasComp[0].texto}\nDeseja comprar mais uma carta?`)
    }
 }
 
