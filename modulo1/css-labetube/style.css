@@ -74,4 +74,10 @@ main>h1 {
         position:fixed;
         bottom :0;
     }
+    main>h1{
+        align-self: unset;
+    }
+     section{
+        width : 100%;
+    }
 }
