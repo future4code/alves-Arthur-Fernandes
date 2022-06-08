@@ -3,10 +3,14 @@ import styled from 'styled-components'
 
 import {IconeComContador} from '../IconeComContador/IconeComContador'
 
+import iconeBookmarkPreto from '../../img/bookmark_black_24dp.svg'
+import iconeBookmark from '../../img/bookmark_border_black_24dp.svg'
 import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
+import iconeEnviar from '../../img/send_black_24dp.svg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
+import {SecaoEnviar} from '../SecaoEnviar/SecaoEnviar'
 
 const PostContainer = styled.div`
   border: 1px solid gray;
@@ -45,7 +49,9 @@ class Post extends React.Component {
     curtido: false,
     numeroCurtidas: 0,
     comentando: false,
-    numeroComentarios: 0
+    numeroComentarios: 0,
+    salvo: false,
+    enviando: false,
   }
 
   onClickCurtida = () => {
@@ -59,8 +65,17 @@ class Post extends React.Component {
       comentando: !this.state.comentando          
     })
   }
+  onClickEnviar = () => {
+    this.setState({
+      enviando: !this.state.enviando          
+    })
+  }
 
-
+  onClickSalvar = () => {
+    this.setState({
+      salvo: !this.state.salvo
+    })
+  }
   aoEnviarComentario = () => {
     this.setState({
       comentando: false,
@@ -68,15 +83,29 @@ class Post extends React.Component {
     })
   }
 
+ 
+  
+
   render() {
     let iconeCurtida
+    let curtidas = 1
 
     if(this.state.curtido) {
       iconeCurtida = iconeCoracaoPreto
       this.state.numeroCurtidas++
+      curtidas = this.state.numeroCurtidas
     } else {
       iconeCurtida = iconeCoracaoBranco
-      this.state.numeroCurtidas = 0
+      this.state.numeroCurtidas--
+      this.state.numeroCurtidas = curtidas-1
+    }
+
+    let iconeSalvar
+
+    if(this.state.salvo) {
+      iconeSalvar = iconeBookmarkPreto
+    }else {
+      iconeSalvar = iconeBookmark
     }
 
     let componenteComentario
@@ -84,7 +113,13 @@ class Post extends React.Component {
     if(this.state.comentando) {
       componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
     }
-  
+    
+    let componenteEnviar
+
+    if(this.state.enviando) {
+      componenteEnviar = <SecaoEnviar />
+    }
+
     return <PostContainer>
       <PostHeader>
         <UserPhoto src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
@@ -105,8 +140,19 @@ class Post extends React.Component {
           onClickIcone={this.onClickComentario}
           valorContador={this.state.numeroComentarios}
         />
+
+        <IconeComContador
+          icone={iconeSalvar}
+          onClickIcone={this.onClickSalvar}
+        />
+
+        <IconeComContador
+          icone={iconeEnviar}
+          onClickIcone={this.onClickEnviar}
+        />
       </PostFooter>
       {componenteComentario}
+      {componenteEnviar}
     </PostContainer>
   }
 }
