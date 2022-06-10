@@ -10,24 +10,53 @@ const MainContainer = styled.div`
 `
 
 class App extends React.Component {
+  state ={
+    inputNome:'',
+    inputPerfil:'',
+    inputImagem:'',
+    postNovo : {
+      nomeUsuario:'',
+      fotoUsuario:'',
+      fotoPost:''
+    }
+  };
+
+ adicionaPost = () => {
+   const novoPost ={
+  nomeUsuario: this.state.inputNome,
+  fotoUsuario: this.state.inputPerfil,
+  fotoPost: this.state.inputImagem,
+  }
+  this.state.postNovo = novoPost
+ }
+ onChangePostNome = (event) => {
+  this.setState({
+    inputNome: event.target.value,
+  }) 
+}
+onChangePostPerfil = (event) => {
+  this.setState({
+    inputPerfil: event.target.value,
+  }) 
+}
+onChangePostImg = (event) => {
+  this.setState({
+    inputImagem: event.target.value,
+  }) 
+}
+
   render() {
+    
+   
     return (
       <MainContainer>
-        <Post
-          nomeUsuario={'paulinha'}
-          fotoUsuario={'https://picsum.photos/50/50'}
-          fotoPost={'https://picsum.photos/200/150'}
-        />
-         <Post
-          nomeUsuario={'paulino'}
-          fotoUsuario={'https://picsum.photos/50/59'}
-          fotoPost={'https://picsum.photos/200/156'}
-        />
-         <Post
-          nomeUsuario={'paulineli'}
-          fotoUsuario={'https://picsum.photos/50/58'}
-          fotoPost={'https://picsum.photos/200/157'}
-        />
+        <Post post={this.state.postNovo}/>
+        <form>
+          <input value ={this.state.inputNome} onChange ={this.onChangePostNome} placeholder = 'Seu Nome'/>
+          <input value ={this.state.inputPerfil} onChange ={this.onChangePostPerfil} placeholder = 'Sua foto'/>
+          <input value ={this.state.inputImagem} onChange ={this.onChangePostImg}placeholder = 'Link da foto'/>
+        </form>
+      <button onClick={this.adicionaPost}/>
       </MainContainer>
     );
   }

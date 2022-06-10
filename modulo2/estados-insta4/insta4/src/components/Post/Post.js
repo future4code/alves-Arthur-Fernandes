@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import {IconeComContador} from '../IconeComContador/IconeComContador'
+import { IconeComContador } from '../IconeComContador/IconeComContador'
 
 import iconeBookmarkPreto from '../../img/bookmark_black_24dp.svg'
 import iconeBookmark from '../../img/bookmark_border_black_24dp.svg'
@@ -9,8 +9,8 @@ import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
 import iconeEnviar from '../../img/send_black_24dp.svg'
-import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
-import {SecaoEnviar} from '../SecaoEnviar/SecaoEnviar'
+import { SecaoComentario } from '../SecaoComentario/SecaoComentario'
+import { SecaoEnviar } from '../SecaoEnviar/SecaoEnviar'
 
 const PostContainer = styled.div`
   border: 1px solid gray;
@@ -52,6 +52,23 @@ class Post extends React.Component {
     numeroComentarios: 0,
     salvo: false,
     enviando: false,
+
+    post: [{
+      nomeUsuario: 'paulinha',
+      fotoUsuario: 'https://picsum.photos/50/50',
+      fotoPost: 'https://picsum.photos/200/150'
+    },
+    {
+      nomeUsuario: 'paulino',
+      fotoUsuario: 'https://picsum.photos/50/59',
+      fotoPost: 'https://picsum.photos/200/156'
+    },
+    {
+      nomeUsuario: 'paulineli',
+      fotoUsuario: 'https://picsum.photos/50/58',
+      fotoPost: 'https://picsum.photos/200/157'
+    }
+    ]
   }
 
   onClickCurtida = () => {
@@ -62,12 +79,12 @@ class Post extends React.Component {
 
   onClickComentario = () => {
     this.setState({
-      comentando: !this.state.comentando          
+      comentando: !this.state.comentando
     })
   }
   onClickEnviar = () => {
     this.setState({
-      enviando: !this.state.enviando          
+      enviando: !this.state.enviando
     })
   }
 
@@ -83,50 +100,50 @@ class Post extends React.Component {
     })
   }
 
- 
-  
+
 
   render() {
     let iconeCurtida
     let curtidas = 1
 
-    if(this.state.curtido) {
+    if (this.state.curtido) {
       iconeCurtida = iconeCoracaoPreto
       this.state.numeroCurtidas++
       curtidas = this.state.numeroCurtidas
     } else {
       iconeCurtida = iconeCoracaoBranco
       this.state.numeroCurtidas--
-      this.state.numeroCurtidas = curtidas-1
+      this.state.numeroCurtidas = curtidas - 1
     }
 
     let iconeSalvar
 
-    if(this.state.salvo) {
+    if (this.state.salvo) {
       iconeSalvar = iconeBookmarkPreto
-    }else {
+    } else {
       iconeSalvar = iconeBookmark
     }
 
     let componenteComentario
 
-    if(this.state.comentando) {
-      componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
+    if (this.state.comentando) {
+      componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario} />
     }
-    
+
     let componenteEnviar
 
-    if(this.state.enviando) {
+    if (this.state.enviando) {
       componenteEnviar = <SecaoEnviar />
     }
 
-    return <PostContainer>
-      <PostHeader>
-        <UserPhoto src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
-        <p>{this.props.nomeUsuario}</p>
-      </PostHeader>
+    const postArray = this.state.post.map((post) => {
+      return <PostContainer>
+        <PostHeader>
+          <UserPhoto src={post.fotoUsuario} alt={'Imagem do usuario'} />
+          <p>{post.nomeUsuario}</p>
+        </PostHeader>
 
-      <PostPhoto src={this.props.fotoPost} alt={'Imagem do post'}/>
+        <PostPhoto src={post.fotoPost} alt={'Imagem do post'} />
 
       <PostFooter>
         <IconeComContador
@@ -154,6 +171,9 @@ class Post extends React.Component {
       {componenteComentario}
       {componenteEnviar}
     </PostContainer>
+    });
+    const postsMaisUm = [...this.state.post, props.post]
+    return (<>{postArray}</>)
   }
 }
 
