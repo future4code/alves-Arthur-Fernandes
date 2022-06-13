@@ -28,18 +28,20 @@ justify-content: center;
 const BoxUsuario = styled.div `
 display : flex;
 width:50vw;
-height:3vh;
+height:4vh;
 background-color:#8aa0cae2;
-justify-content: space-between;
+justify-content: space-around;
 `
 const InputMensagem = styled.input`
 width: 30vw;
 background-color:#8aa0cacb;
 font-family : Roboto;
+border: none;
 `
 const InputUser = styled.input `
 background-color:#8aa0cacb;
 font-family : Roboto;
+border: none;
 `
 const BotaoSend = styled.button `
 background-color:#8aa0cacb;
