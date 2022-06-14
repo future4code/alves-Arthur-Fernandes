@@ -1,95 +1,106 @@
-*{
-    padding:0;
-    margin:0;
+* {
+    padding: 0;
+    margin: 0;
 }
-body{
+
+body {
     width: 100%;
     height: 100%
 }
+
 header {
-    display:flex;
-    background-color:mediumvioletred;
+    display: flex;
+    background-color: mediumvioletred;
     padding: 1%;
     max-width: 100%;
-    height:4vh;
+    height: 4vh;
     gap: 1vw;
     justify-content: space-between;
 }
 
-header h2{
-    width : 100%;
+header h2 {
+    width: 100%;
     text-align: left;
     font-size: 200%;
     margin: auto;
 }
 
-header button{
-    height:2.5vh;
+header button {
+    height: 2.5vh;
     width: 3vw;
-    margin:auto;
+    margin: auto;
 }
-header img{
-    margin:auto;
+
+header img {
+    margin: auto;
     width: 1.25%
 }
-section{
-    display:flex;
+
+section {
+    display: flex;
     height: 100%;
-    width:100%
+    width: 100%
 }
+
 nav {
-    display:flex;
-    width:20% ;
+    display: flex;
+    width: 20%;
     flex-direction: column;
     background-color: #f2d0e0;
     gap: 2vh;
     padding: 1vh 2vw;
 }
-nav img{
+
+nav img {
     width: 1.50vw;
-    margin:auto
+    margin: auto
 }
+
 a {
-   display: flex;
-    width:100%;
+    display: flex;
+    width: 100%;
     gap: 1vw;
     text-decoration-line: none;
 }
-a h3{
-    width:100%;
+
+a h3 {
+    width: 100%;
     text-decoration: none;
     color: black;
     margin: auto;
 }
-main{
+
+main {
     display: flex;
-    width:80%;
-    height:100%;
-    font-size:100%;
-    flex-wrap:wrap;
+    width: 80%;
+    height: 100%;
+    font-size: 100%;
+    flex-wrap: wrap;
     gap: 2%
 }
 
-main img{
+main img {
     width: 100%;
 }
-article{
-    width:20%;
+
+article {
+    width: 20%;
     box-shadow: 5px 5px 5px darkgray;
     margin: 2vh 1vw;
     text-align: center
- }
-
-article p{
-   margin-top: 5% ;
-   margin-bottom:1%;
 }
-footer{
-    background-color:mediumvioletred;
+
+article p {
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+
+footer {
+    background-color: mediumvioletred;
     max-width: 100%;
-    height:4vh;
+    height: 4vh;
     padding: 1%;
-    font-size:100%;
+    font-size: 100%;
     font-weight: bold;
-    text-align:center;
+    text-align: center;
 }

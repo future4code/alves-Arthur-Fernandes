@@ -45,6 +45,7 @@ export class SecaoEnviar extends Component {
 
     onClickCompartilhar = (event) => {
         console.log(`Post compartilhado no ${event.target.alt} com a mensagem : ${this.state.comentario}`)
+        this.setState({ comentario : ''})
     }
 
 

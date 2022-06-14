@@ -1,90 +1,128 @@
 #pond {
     display: flex;
-  justify-content: end;
-  }
+    justify-content: end;
+}
+
 #pond {
     display: flex;
-  justify-content:center
-  }
+    justify-content: center
+}
+
 #pond {
     display: flex;
-  justify-content: space-around
-  }
+    justify-content: space-around
+}
+
 #pond {
     display: flex;
-  justify-content:space-between
-  }
+    justify-content: space-between
+}
+
 #pond {
     display: flex;
-  align-items: end
-  }
+    align-items: end
+}
+
 #pond {
     display: flex;
-  justify-content: center;
-  align-items: center;
-  }
+    justify-content: center;
+    align-items: center;
+}
+
 #pond {
     display: flex;
-  justify-content: space-around;
-  align-items: end;
-  }
+    justify-content: space-around;
+    align-items: end;
+}
+
 #pond {
     display: flex;
-  flex-direction: row-reverse
-  }
+    flex-direction: row-reverse
+}
+
 #pond {
     display: flex;
-  flex-direction : column;
-  }
+    flex-direction: column;
+}
+
 #pond {
     display: flex;
-  flex-direction: row-reverse;
-  justify-content: start;
-  }
+    flex-direction: row-reverse;
+    justify-content: start;
+}
+
 #pond {
     display: flex;
-  flex-direction: column;
-  justify-content: end
-  }
+    flex-direction: column;
+    justify-content: end
+}
+
 #pond {
     display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-between;
-  }
+    flex-direction: column-reverse;
+    justify-content: space-between;
+}
+
 #pond {
     display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
-  align-items: end;
-  }
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: end;
+}
+
 #pond {
     display: flex;
-  }
-  
+}
+
 .yellow {
-  order:1
-  }
+    order: 1
+}
+
 #pond {
     display: flex;
-  }
-  
+}
+
 .red {
-  order:-1
-  }
+    order: -1
+}
+
 #pond {
     display: flex;
     align-items: flex-start;
-  }
-  
+}
+
 .yellow {
-  align-self:end
-  }
+    align-self: end
+}
+
 #pond {
     display: flex;
     align-items: flex-start;
-  }
-  
+}
+
 .yellow {
-  order: 1;
-  align-self: end
-  }
+    order: 1;
+    align-self: end
+}
+
+#pond {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#pond {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#pond {
+    display: flex;
+    flex-flow: column wrap
+}
+
+#pond {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start
+}

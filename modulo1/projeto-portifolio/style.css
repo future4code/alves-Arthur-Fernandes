@@ -32,14 +32,13 @@ body div{
 }
 header {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.16);
-    background-color:#4E7682;
+    background-color:#4e7682c2;
     border-radius: 10px;
     text-align:center;
     width:75%;
     padding: 1%;
     color:#ffffff;
     margin:auto;
-    opacity: 0.75;
     
 }
 header h1{
@@ -88,12 +87,12 @@ main h3{
 }
 .box{
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.16);
-    background-color:#4E7682;
+    background-color:#4e7682c2;
     width:65%;
     padding: 5%;
     border-radius:20px;
     margin:auto;
-    opacity: 0.75;
+ 
 
 }
 .social {
@@ -119,14 +118,13 @@ main h3{
 }
 footer{
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.16);
-    background-color:#4E7682;
+    background-color:#4e7682c2;
     border-radius: 10px;
     text-align:center;
     width:75%;
     padding: 1%;
     color:#ffffff;
     margin:auto;
-    opacity: 0.75;
     font-size: 30px;
 }
 ol{
