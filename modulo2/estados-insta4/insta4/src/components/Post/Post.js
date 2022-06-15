@@ -172,7 +172,7 @@ class Post extends React.Component {
       {componenteEnviar}
     </PostContainer>
     });
-    const postsMaisUm = [...this.state.post, props.post]
+    const postsMaisUm = [...this.state.post]
     return (<>{postArray}</>)
   }
 }
