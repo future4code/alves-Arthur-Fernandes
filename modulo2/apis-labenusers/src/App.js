@@ -1,46 +1,20 @@
 
 import React from 'react';
 import axios from 'axios';
+import TelaCadastro from './Components/TelaCadastro';
+import TelaUsuario from './Components/TelaUsuario';
 
 class App extends React.Component {
   state = {
-    nameUser: '',
-    emailUser: '',
-    logado: false,
+
+    logado: '',
     usuarios: [],
   }
-
-  setNameUser = (e) => {
-    this.setState({ nameUser: e.target.value })
-  }
-  setMailUser = (e) => {
-    this.setState({ emailUser: e.target.value })
-  }
-  addUser = () => {
-    const body = {
-      "name": this.state.nameUser,
-      "email": this.state.emailUser
-    }
-    const addUser = axios.post(
-      'https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users',
-      body,
-      {
-        headers: {
-          Authorization: "arthur-fernandes-alves"
-        }
-      }
-    );
-    addUser
-      .then((resposta) => {
-        console.log(resposta)
-        alert("Usuário Cadastrado")
-      })
-      .catch((erro) => {
-        alert(erro.response.data.message);
-      });
+  componentDidMount (){
+    this.showUsers()
   }
   showUsers = () => {
-      axios.get(
+    axios.get(
       'https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users',
 
       {
@@ -49,60 +23,41 @@ class App extends React.Component {
         }
       })
       .then((resposta) => {
-      console.log(resposta.data)
-      this.setState({ usuarios : resposta.data })
-    })
-  }
-  showUserTela = () => {
-    this.setState({ logado: !this.state.logado })
-    this.showUsers()
-  }
-  removeUser = (id) => { 
-  axios.delete(
-      `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}`,
-      {
-        headers: {
-          Authorization: "arthur-fernandes-alves"
-        }
-      })
-  .then((resposta) => {
-   alert('Usuário Removido')
-    this.showUsers()
-  
-  })
-  .catch((erro) => {
-    alert(erro.response.data.message)
-  })
     
+        this.setState({ usuarios: resposta.data })
+      })
   }
-  render() {
-    let userInterface
-    if (this.state.logado === false) {
-      userInterface =
-        <div>
-          <label> Nome de Usuário</label>
-          <input value={this.state.nameUser} onChange={this.setNameUser} placeholder='Usuário' />
-          <label> Email do Usuário</label>
-          <input value={this.state.emailUser} onChange={this.setMailUser} placeholder='Seu email' />
-          <button onClick={this.addUser}>Enviar</button>
+  showUserTela = (tela) => {
+    this.setState({ logado: tela })
+  }
+  
+  userInterface = () => {
+    switch (this.state.logado) {
+        
+      case "telaUsuário":
+        return <div>
+          <TelaUsuario 
+          usuarios={this.state.usuarios} 
+          pegaUsuarios={this.showUsers} 
+          detalhe={this.showUserTela} />
         </div>
-    } else {
-      userInterface =
-        <ul>
-          <h2>Usuários:</h2>
-          {this.state.usuarios.map((users) => {return <li> {users.name}
-      <button onClick={()=>this.removeUser(users.id)}>Remover</button>
-      </li>})}
-        </ul>
-    }
+     
 
-    return (
-      <div>
-        <button onClick={this.showUserTela}>Trocar Tela</button>
-        {userInterface}
-      </div>
-    );
+      default:
+        return<div>
+          <TelaCadastro />
+          <button onClick={() => {this.showUserTela('telaUsuário')}}>Usuários</button>
+        </div>
+       
+    }
   }
-}
+    render() {
+      return (
+        <>
+          {this.userInterface()} 
+        </>
+      );
+    }
+  }
 
 export default App;
