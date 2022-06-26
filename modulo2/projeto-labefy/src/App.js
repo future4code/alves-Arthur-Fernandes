@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
 
+import React from "react";
+import axios from "axios";
+import styled from "styled-components";
+import TelaPlaylists from "./Screens/TelaPlaylists";
+import logo from "./img/logo.png"
+
+const BoxGeral = styled.div `
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:#372461;
+  min-height: 100vh;
+  width: 100%;
+`
+const Logo = styled.img `
+  width:10vw;
+`
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <BoxGeral>
+    <Logo src={logo}/>
+     <TelaPlaylists/>
+    </BoxGeral>
+  </>);
 }
 
 export default App;
