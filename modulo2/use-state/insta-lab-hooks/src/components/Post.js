@@ -1,6 +1,49 @@
 
 import { useState } from "react";
+import styled from "styled-components";
 
+const Main = styled.div `
+display: flex;
+flex-direction: column;
+align-items: center;
+border: solid 1px purple;
+min-width: 20vw;
+`
+const User = styled.figure `
+display: flex;
+flex-direction: column;
+align-items: center;
+border: solid 1px purple;
+`
+const BoddyPost = styled.main`
+display: flex;
+flex-direction: column;
+align-items: center;
+border: solid 1px purple;
+text-align: center;
+width: 80%;
+border-radius: 5px;
+`
+const Box = styled.section`
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+max-width: 100%;
+` 
+const Footer= styled.footer`
+  width:20vw;
+  display:flex;
+  justify-content: space-evenly;
+`
+const BoxComment = styled.div`
+  border: solid 1px purple;
+  width: inherit;
+  max-width: 100%;
+  min-width: 80%;
+  margin-bottom: 2vh;
+  overflow: hidden;
+  text-overflow:ellipsis;
+`
 function Post(props) {
   // Passo5
   const [curtido, setCurtido] = useState(false)
@@ -52,38 +95,38 @@ function Post(props) {
     </>
   );
   return (
-    <main>
+    <Main>
       <header>
-        <figure>
+        <User>
           <img src={props.fotoUsuario} alt={'Imagem do usuario'} />
           <span>{props.nomeUsuario}</span>
-        </figure>
+        </User>
       </header>
       <hr />
-      <main>
+      <BoddyPost>
         <figure>
           <p>{`"Acordar para quem você é requer desapego de quem você imagina ser" (Alan Watts)`}</p>
           <img src={props.fotoPost} alt={'Imagem do post'} />
         </figure>
-      </main>
+      </BoddyPost>
       <hr />
-      <footer>
-        <section>
-          <span>Número de curtidas: {numeroCurtidas}</span>
+      <Footer>
+        <Box>
+          <span>Comentários:{numeroComentarios}</span>
+          <button onClick={onClickComentario}>
+            {comentado ? "Fechar" : "Comentar"}
+          </button>
+          <h4>Comentários :</h4>
+          <BoxComment>{caixaDeComentario}</BoxComment>
+        </Box>
+        <Box>
+          <span>Curtidas:{numeroCurtidas}</span>
           <button onClick={onClickCurtida}>
             {curtido ? "Dislike" : "Like"}
           </button >
-        </section>
-        <section>
-          <span>Número de comentários: {numeroComentarios}</span>
-          <button onClick={onClickComentario}>
-            {comentado ? "Fechar comentário" : "Adicionar comentário"}
-          </button>
-          <h4>Comentários</h4>
-          {caixaDeComentario}
-        </section>
-      </footer>
-    </main>
+        </Box>
+      </Footer>
+    </Main>
   );
 };
 
