@@ -13,6 +13,10 @@ const ImageProfile = styled.img`
   width: 10vw;
   height: 10vw;
   border-radius: 50%;
+  @media (max-width:800px) {
+      width:20vw;
+      height:20vw;
+}
 `
 const BoxCard = styled.div` 
  display: flex;

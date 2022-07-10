@@ -29,11 +29,18 @@ const Button = styled.button `
     color: #41474c;
   }
   img{ width:1vw;}
+  @media (max-width:1000px){
+    p{display:none;}
+    img{width:4vw;}
+  }
 `
 const DisplayMatches = styled.div `
     display: flex;
     flex-direction: column-reverse;
     gap:2vh;
+    @media (max-width:800px){
+        font-size: 80%;
+    }
 `
 
 const TelaMatch = (props) => {
@@ -65,7 +72,7 @@ iconClear ?  iconCl = iconC1 : iconCl = iconC
         onClick={props.clearMatches}
         onMouseEnter={handleIconC}
         onMouseLeave={handleIconC}
-        ><img src={iconCl} alt='Limpar Matches'/>Limpar Matches</Button>
+        ><img src={iconCl} alt='Limpar Matches'/><p>Limpar Matches</p></Button>
         {matches.map((item)=>{
             return <div key={item.id}>
             <h2>{item.name}   {item.age}</h2>

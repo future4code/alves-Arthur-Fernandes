@@ -27,6 +27,9 @@ const Button = styled.button `
     background-color:#BC8184;
     color: #41474c;
   }
+  @media (max-width:1000px) {
+  p{display:none}
+}
 `
 
 const Header = (props) => {
@@ -51,7 +54,7 @@ const handleIcon =()=> {
        onClick={()=>{ if(props.tela ==2){props.change(1)}else{props.change(2)}}} 
        onMouseEnter={handleIcon} 
        onMouseLeave={handleIcon}>
-        <Icon src={buttonIcon}/>{props.tela ==2 ? <>Perfis</> : <>Matches</>}
+        <Icon src={buttonIcon}/>{props.tela ==2 ? <p>Perfis</p> : <p>Matches</p>}
         </Button>
         }
     </HeaderStyle>
