@@ -2,7 +2,7 @@ import React from 'react'
 import Card from '../Components/Card'
 import axios from 'axios'
 
-const TelaInicial = () => {
+const TelaInicial = (props) => {
   
     const likeProfile = (id) => {
     const body = {
@@ -10,21 +10,12 @@ const TelaInicial = () => {
 	    choice: true
     }
         axios.post('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/arthurgf/choose-person',body)
-        .then((response)=>{console.log(response.data)})
+        .then((response)=>{response.data.isMatch&& alert('É um Match!')})
         .catch((err)=> console.log(err))
     }
-    const clearMatches = () => {
-    
-        axios.put('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/arthurgf/clear')
-        .then((response)=>{console.log(response.data.message)})
-        .catch((err)=> console.log(err))
-    }
-   
+
     return (
-    <div>
-         <button onClick={clearMatches}>Limpar Matches</button>
-        <Card like={likeProfile}/>
-    </div>
+        <Card like={likeProfile} clearMatches={props.clearMatches}/>
   )
 }
 
