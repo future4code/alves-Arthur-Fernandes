@@ -29,6 +29,8 @@ const Button = styled.button `
   }
   @media (max-width:1000px) {
   p{display:none}
+  width:8vw;
+  img{width:2vw;}
 }
 `
 
