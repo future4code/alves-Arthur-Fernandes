@@ -33,12 +33,11 @@ const CreateTripPage = () => {
   const CreateTrip = (e) => {
     e.preventDefault()
     setLoading(true)
-    console.log(form)
     axios.post(`${BASE_URL}/trips`,form ,header)
   
-      .then((resp) => {;
-        setLoading(false)
-        console.log(resp.data)
+      .then((resp) => {
+        setLoading(false);
+        alert('Viagem Cadastrada com sucesso!')
         goBack(navigate);
       })
       .catch((err) => {

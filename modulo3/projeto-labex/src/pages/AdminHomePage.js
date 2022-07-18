@@ -42,7 +42,7 @@ const AdminHomePage = () => {
       .then((resp) => {
         setTrips(resp.data.trips)
       })
-      .catch((e) => console.log(e.data))
+      .catch((e) => alert(e.response.data.message))
   }
   useEffect(() => {
     getTrips()
@@ -55,7 +55,7 @@ const AdminHomePage = () => {
   const deleteTrip = (id) => {
     axios.delete(`${BASE_URL}/trips/${id}`, header)
       .then((resp) => { setTrips(resp.data.trips); getTrips() })
-      .catch((e) => console.log(e.data))
+      .catch((e) => alert(e.response.data.message))
   }
 
   return (<Box2>

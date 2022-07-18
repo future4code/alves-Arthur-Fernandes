@@ -29,8 +29,8 @@ const ListTripsPage = () => {
    useEffect(() =>{
       
       axios.get(`${BASE_URL}/trips`)
-      .then((resp)=> {console.log(resp.data.trips); setTrips(resp.data.trips)})
-      .catch((e)=>console.log(e.data))
+      .then((resp)=> {setTrips(resp.data.trips)})
+      .catch((e)=>alert(e.response.data.message))
     }, [])
 
     return (

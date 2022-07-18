@@ -33,7 +33,7 @@ const TripDetailsPage = () => {
   const [trip, setTrip] = useState('')
 
   const {id} = useParams()
-  console.log(id)
+
   const header = {
     headers: {
       auth: localStorage.getItem("token")
@@ -42,13 +42,12 @@ const TripDetailsPage = () => {
 
   const getDetails = () => {
     axios.get(`${BASE_URL}/trip/${id}`, header)
-  .then((resp) => {setTrip(resp.data.trip); console.log(resp.data)})
-  .catch((e) => console.log(e.data))
+  .then((resp) => {setTrip(resp.data.trip)})
+  .catch((e) => alert(e.response.data.message))
 }
   const navigate = useNavigate()
   useEffect(()=>{
     getDetails();
-    console.log(trip);
     (localStorage.getItem('token') === null) && goToLoginPage(navigate)
 },[])
   const Decide = (idCan, boolean) => {
@@ -56,7 +55,7 @@ const TripDetailsPage = () => {
       "approve": boolean
     }
     axios.put(`${BASE_URL}/trips/${id}/candidates/${idCan}/decide`,body, header)
-    .then((resp) => {console.log(resp.data);getDetails()})
+    .then((resp) =>alert(resp.data.message))
     .catch((e) => console.log(e.data))
   }
 
