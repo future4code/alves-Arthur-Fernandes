@@ -38,7 +38,7 @@ const Feed = () => {
       <Box>
         <PostForm />
         {posts.map((post) => {
-          return <PostBox id={post.id}>
+          return <PostBox key={post.id}>
             <div onClick={()=>goToPost(navigate, post.id)}>
             <p>Enviado por {post.username}</p>
             <h2>{post.title}</h2>

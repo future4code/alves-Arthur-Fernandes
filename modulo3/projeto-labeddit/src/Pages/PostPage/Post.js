@@ -42,7 +42,7 @@ const Post = () => {
     <Header/>
     <Box>
         {postUnico().map((post)=>{
-          return <PostBox id={post.id}>
+          return <PostBox key={post.id}>
             <div>
             <p>Enviado por {post.username}</p>
             <h2>{post.title}</h2>
@@ -65,7 +65,7 @@ const Post = () => {
       {load}
       {err}
       {comments.map((comment)=>{
-        return <CommentBox>
+        return <CommentBox key={comment.id}>
           <p>Enviado por : {comment.userId}</p>
             <h2>{comment.body}</h2>
             <div>
