@@ -4,14 +4,17 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import Logo from '../Assets/img/logo.png'
-import { Box2, IconeLogo } from './HeaderStyle'
-import { useNavigate } from 'react-router-dom'
+import { BackButton, Box2, IconeLogo } from './HeaderStyle'
+import { useNavigate, useParams } from 'react-router-dom'
 import { goToLoginPage } from '../Routes/coordinator';
 import GlobalContext from '../Global/GlobalContext';
+import X from '../Assets/img/x.png'
+import { goBack } from '../Routes/coordinator';
 
 export default function Header() {
     const {setLogged}= useContext(GlobalContext)
     const navigate = useNavigate()
+    const params = useParams()
     
     const logout = () => {
         localStorage.removeItem("token")
@@ -43,11 +46,19 @@ export default function Header() {
             )
         }
     }
+  const defineButtonLeft = () => {
+        if (window.location.pathname === `/post/${params.id}`){
+            return <BackButton onClick={()=>goBack(navigate)}>
+                <img src={X}/>
+            </BackButton>
+        }
+    }
  
     return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar color="secondary" position="static">
         <Toolbar sx={{justifyContent:'flex-end',}}>
+            {defineButtonLeft()}
             <Box2>
             <IconeLogo src ={Logo} alt='Logo'/>
             </Box2>

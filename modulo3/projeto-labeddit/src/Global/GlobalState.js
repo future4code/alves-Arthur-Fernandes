@@ -10,12 +10,12 @@ const GlobalState = (props) => {
     const [posts, setPosts] = useState ([])
     const [comments, setComments] = useState ([])
 
-
     let load
-  useEffect(
-    ()=>{if (loading) {
+    useEffect(
+      ()=>{
+     if (loading){
     load = <CircularProgress color="primary" />
-    } else {load = <></>}},[loading]
+    }else {load =<></>}},[loading]
   )
     const valor = {
         loading,

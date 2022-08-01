@@ -1,7 +1,7 @@
 import { TextField } from '@mui/material'
 import React, { useContext } from 'react'
-import {Forms, Line} from './FeedStyle'
-import {useNavigate} from 'react-router-dom'
+import {Forms, Line} from './PostStyle'
+import { useNavigate, useParams } from 'react-router-dom'
 import useForm from '../../Hooks/useForm'
 import GlobalContext from '../../Global/GlobalContext'
 import Button from '@mui/material/Button'
@@ -10,12 +10,14 @@ import { postComment } from '../../Services/posts'
 const CommentForm = () => {
     const { form, handleInput, clear } = useForm({ body: '' })
     const {load, err, setLoading, setErr, setComments} = useContext(GlobalContext)
+      const params = useParams()
+    
     const navigate = useNavigate()
   
    const onSubmit = (e) => {
        e.preventDefault()
         setLoading(true)
-       postComment(form, setLoading, setComments, setErr, clear)
+       postComment(form, setLoading, setComments, setErr, params.id, clear)
     }
   return (
     <Forms onSubmit={onSubmit}>

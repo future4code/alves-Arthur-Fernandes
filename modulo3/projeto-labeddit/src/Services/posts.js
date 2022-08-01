@@ -24,16 +24,16 @@ export const getPosts = (setLoading, setPosts, setErr) => {
       })
   }
   
-export const getComments = (setLoading, setPosts, setErr,id) => {
+export const getComments = (setLoading, setComments, setErr,id) => {
     const token = localStorage.getItem('token')
     const header = {
         Authorization: token
 }
-    axios.get(`${BASE_URL}posts/${id}`, {headers : header})
+    axios.get(`${BASE_URL}posts/${id}/comments`, {headers : header})
 
       .then((resp) => {
         console.log(resp);
-        setPosts(resp.data);
+        setComments(resp.data);
       setLoading(false)
       })
       .catch((err) => {
@@ -101,15 +101,16 @@ export const postPost = (body, setLoading, setPosts, setErr, clear) => {
       })
   }
 
-  export const postComment = (body, setLoading, setPosts, setErr, clear) => {
+  export const postComment = (body, setLoading, setComments, setErr, id, clear) => {
     const token = localStorage.getItem('token')
     const header = {
         Authorization: token
 }
-    axios.post(`${BASE_URL}posts`,body , {headers : header})
+    axios.post(`${BASE_URL}posts/${id}/comments`,body , {headers : header})
 
       .then((resp) => {
             console.log(resp);
+            getComments(setLoading, setComments, setErr, id);
             setLoading(false)
             clear()
       })
@@ -117,6 +118,42 @@ export const postPost = (body, setLoading, setPosts, setErr, clear) => {
         console.log(err)
         setLoading(false)
         clear()
+        setErr(err.response.data.message)
+      })
+  }
+  export const voteComment = (body, setLoading, setPosts, setErr,id, idPost) => {
+    const token = localStorage.getItem('token')
+    const header = {
+        Authorization: token
+}
+    axios.post(`${BASE_URL}comments/${id}/votes`,body , {headers : header})
+
+      .then((resp) => {
+            console.log(resp);
+            getComments(setLoading, setPosts, setErr, idPost);
+            setLoading(false)
+      })
+      .catch((err) => {
+        console.log(err)
+        setLoading(false)
+        setErr(err.response.data.message)
+      })
+  }
+  export const unvoteComment = (setLoading, setPosts, setErr,id, idPost) => {
+    const token = localStorage.getItem('token')
+    const header = {
+        Authorization: token
+}
+    axios.delete(`${BASE_URL}comments/${id}/votes`, {headers : header})
+
+      .then((resp) => {
+            console.log(resp);
+            getComments(setLoading, setPosts, setErr, idPost);
+            setLoading(false)
+      })
+      .catch((err) => {
+        console.log(err)
+        setLoading(false)
         setErr(err.response.data.message)
       })
   }
