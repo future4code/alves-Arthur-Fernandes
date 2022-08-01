@@ -31,7 +31,7 @@ h1{
 }
 flex-direction: column;
 align-items : center;
-margin: 10vh 5vw;
+margin: 5vh 5vw;
 width: 90vw;
 height: 100vh;
 gap: 2vh;
@@ -63,5 +63,46 @@ button{
 img{
     width: 3vw;
     height:3vw;
+}
+`
+export const PostBox = styled.div`
+border: 1px solid #E0E0E0;
+border-radius: 12px;
+background: #FBFBFB;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 9px 10px;
+gap: 18px;
+width: 90vw;
+
+`
+export const IconRow = styled.div`
+display: flex;
+justify-content: space-evenly;
+width: 50%;
+font-size: 75%;
+align-items: center;
+text-align: center;
+button{
+    border: none;
+    background-color:inherit;
+}
+img{
+    width: 3vw;
+    height:3vw;
+}
+h4{
+    text-align: center;
+}
+div{
+    display:flex;
+    gap: 2vw;
+    justify-content:center;
+    align-items:center;
+    border: 1px solid #ECECEC;
+    border-radius: 28px;
+    min-width:20vw;
+    height: 4vh;
 }
 `

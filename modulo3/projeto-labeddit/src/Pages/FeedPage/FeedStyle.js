@@ -32,7 +32,7 @@ h1{
 }
 flex-direction: column;
 align-items : center;
-margin: 10vh 5vw;
+margin: 5vh 5vw;
 width: 90vw;
 height: 100vh;
 gap: 2vh;
