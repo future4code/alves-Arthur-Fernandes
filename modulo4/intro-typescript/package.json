@@ -1,0 +1,18 @@
+{
+  "name": "modulo4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test1": "tsc ./src/exercicio1.ts && node ./build/exercicio1.js",
+    "test2": "tsc ./src/exercicio2.ts && node ./build/exercicio2.js",
+    "test3": "tsc ./src/exercicio3.ts && node ./build/exercicio3.js",
+    "test4": "tsc ./src/exercicio4.ts && node ./build/exercicio4.js",
+    "test5": "tsc ./src/exercicio5.ts && node ./build/exercicio5.js"
+  },
+  "author": "arthur",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.7.1"
+  }
+}

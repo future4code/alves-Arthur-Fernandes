@@ -1,0 +1,12 @@
+{
+  "name": "aula-node",
+  "version": "1.0.0",
+  "description": "aulinha de node xuxu-beleza",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node ./index.js"
+  },
+  "author": "Arthur GF",
+  "license": "ISC"
+}
