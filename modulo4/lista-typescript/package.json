@@ -1,11 +1,21 @@
 {
-  "name": "lista-typescript",
+  "name": "lista-typescript-resolucao",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
   },
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "moment": "2.29.1",
+    "parcel-bundler": "^1.6.1"
+  },
+  "devDependencies": {
+    "typescript": "4.4.4"
+  },
+  "resolutions": {
+    "@babel/preset-env": "7.13.8"
+  },
+  "keywords": []
 }
