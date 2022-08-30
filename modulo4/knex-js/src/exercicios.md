@@ -1,0 +1,1 @@
+1-a) A mesma resposta dada pelo MySql. 
